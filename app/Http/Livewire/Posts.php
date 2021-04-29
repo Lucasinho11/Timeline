@@ -14,13 +14,13 @@ class Posts extends Component
     public function render()
     {
         return view('livewire.posts', [
-            'posts' => Post::paginate(5),
+            'posts' => Post::latest()->paginate(5),
         ]);
     }
     public function postAdded($post)
     {
         
-        $this->posts->prepend(Post::find($post['id']));
+        Post::find($post['id']);
         
         session()->flash('status', "Nouveau message");
     }
