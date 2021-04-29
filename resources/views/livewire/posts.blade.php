@@ -10,7 +10,7 @@
   @foreach ($posts as $post)
         <livewire:post :post="$post" :key="$post->id" />
     @endforeach
-    {{ $postsPage->links() }}
+    {{ $posts->links() }}
   </ul>
 </div>
     

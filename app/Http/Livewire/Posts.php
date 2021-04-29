@@ -9,12 +9,12 @@ class Posts extends Component
 {
     use WithPagination;
     protected $listeners = ['echo:posts,PostAdded' => "postAdded"];
-    public $posts;
+    //public $posts;
 
     public function render()
     {
         return view('livewire.posts', [
-            'postsPage' => Post::paginate(5),
+            'posts' => Post::paginate(5),
         ]);
     }
     public function postAdded($post)
@@ -24,9 +24,9 @@ class Posts extends Component
         
         session()->flash('status', "Nouveau message");
     }
-    public function mount()
-    {
-        $this->posts = Post::latest()->get();
-    }
+    // public function mount()
+    // {
+    //     $this->posts = Post::latest()->get();
+    // }
 
 }

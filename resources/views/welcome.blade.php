@@ -22,10 +22,11 @@
     </head>
     <body class="antialiased">
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
+            <h1 style="text-align: center; color: white;">Voici une timeline ou vous pouvez poster votre post<br> et aussi communiquer avec les autres utilisateurs <br>(il faut créer un compte pour faire des posts).</h1>
             @if (Route::has('login'))
                 <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
                     @auth
-                        <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 underline">Dashboard</a>
+                        <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 underline" style="color:white">Dashboard</a>
                     @else
                         <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Log in</a>
 
@@ -40,5 +41,6 @@
                 </div>
             </div>
         </div>
+
     </body>
 </html>
